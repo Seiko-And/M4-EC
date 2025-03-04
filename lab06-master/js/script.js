@@ -9,10 +9,15 @@ investment = parseFloat(prompt('Enter investment amount as xxxx.xx'));
 rate = parseFloat(prompt('Enter interest rate as xx.x'));
 years = parseInt(prompt('Enter the number of years you want to invest for'));
 
-// CALCULATE FUTURE VALUE
-futureValue = investment;
-for (let i = 0; i < years; i++) {
-    futureValue = futureValue + (futureValue * rate / 100);
+// Validate the inputs
+if (!isNaN(investment)&& !isNaN(rate) && rate > 0 && !isNaN(years) && years >=1 && years <=30){
+    
+    // CALCULATE FUTURE VALUE
+    futureValue = investment;
+    for (let i = 0; i < years; i++) {
+        futureValue = futureValue + (futureValue * rate / 100);
+    }
+    
 }
 
 // DISPLAY RESULT
