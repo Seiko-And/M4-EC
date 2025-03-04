@@ -12,6 +12,14 @@ do {
     } else {
         alert('One or both entries are invalid.');
     }
+
     again = prompt('Run application again? (y or n)', 'y');
+
+    // If anything other than “y” or “n”, the prompt reappear until valid input is entered
+    do {
+        again = prompt(' Invalid. Run application again? (y or n)', 'y');
+
+    }while  (again !== 'y' && again !== 'n');
+   
 } while (again === 'y');
 console.log('Application has exited.');
